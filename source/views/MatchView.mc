@@ -213,6 +213,28 @@ class MatchView extends WatchUi.View {
 		);
 	}
 
+	
+	function drawStats(dc as Dc) as Void {
+		//boundaries cannot be null at this point
+		var bd = boundaries as MatchBoundaries;
+		// Get avtivity infos
+		var activity = Activity.getActivityInfo() as Info;
+		var hr = (activity.currentHeartRate != null) ? activity.currentHeartRate : "--";
+		var distance = (activity.elapsedDistance != 0 && activity.elapsedDistance != null) ? activity.elapsedDistance.format("%d") + " M": "0 M"; 
+		// Get game infos
+		var set = match.getCurrentSet();
+		var menes = (set.getRalliesNumber() <= 1) ? set.getRalliesNumber().toString() + " Mène" : set.getRalliesNumber().toString() + " Mènes";
+
+		dc.setColor(Graphics.COLOR_WHITE, Graphics.COLOR_TRANSPARENT);
+		dc.drawText(
+			bd.xCenter,
+			bd.yFront + MatchBoundaries.TIME_HEIGHT * -0.8 as Float,
+			Graphics.FONT_TINY,
+			menes + " / " + distance + " / " + hr,
+			Graphics.TEXT_JUSTIFY_CENTER
+		);
+	}
+/*	
 	function drawStats(dc as Dc) as Void {
 		var set = match.getCurrentSet();
 		var distance = match.getDistance();
@@ -230,7 +252,7 @@ class MatchView extends WatchUi.View {
 			Graphics.TEXT_JUSTIFY_CENTER
 		);
 	}
-
+*/
 	function onUpdate(dc as Dc) {
 		//when onUpdate is called, the entire view is cleared on some watches (reported by users with vivoactive 4 and venu)
 		//in the simulator it's not the case for all watches
