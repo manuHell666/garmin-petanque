@@ -65,8 +65,8 @@
 	<string id="field_score_player1_unit_label">pts</string>
 	<string id="field_score_player2_data_label">Player 2</string>
 	<string id="field_score_player2_unit_label">pts</string>
-	<string id="field_rally_player_data_label">Player</string>
-	<string id="field_rally_player_unit_label"></string>
-	<string id="field_rally_score_data_label">Score</string>
-	<string id="field_rally_score_unit_label">pt(s)</string>
+	<string id="field_rally_score_player1_data_label">Player 1</string>
+	<string id="field_rally_score_player1_unit_label">pts</string>
+	<string id="field_rally_score_player2_data_label">Player 2</string>
+	<string id="field_rally_score_player2_unit_label">pts</string>
 </resources>

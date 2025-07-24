@@ -17,12 +17,12 @@
 	<label id="rally15" x="center" y="70%" font="Graphics.FONT_TINY" color="Graphics.COLOR_WHITE" justification="Graphics.TEXT_JUSTIFY_CENTER" />
 	<label id="rally16" x="center" y="80%" font="Graphics.FONT_XTINY" color="Graphics.COLOR_WHITE" justification="Graphics.TEXT_JUSTIFY_CENTER" />
 
-	<label id="rally17" x="80%" y="10%" font="Graphics.FONT_XTINY" color="Graphics.COLOR_RED" justification="Graphics.TEXT_JUSTIFY_RIGHT" />
-	<label id="rally18" x="85%" y="20%" font="Graphics.FONT_TINY" color="Graphics.COLOR_RED" justification="Graphics.TEXT_JUSTIFY_RIGHT" />
-	<label id="rally19" x="90%" y="30%" font="Graphics.FONT_SMALL" color="Graphics.COLOR_RED" justification="Graphics.TEXT_JUSTIFY_RIGHT" />
-	<label id="rally20" x="90%" y="40%" font="Graphics.FONT_SMALL" color="Graphics.COLOR_RED" justification="Graphics.TEXT_JUSTIFY_RIGHT" />
-	<label id="rally21" x="90%" y="50%" font="Graphics.FONT_SMALL" color="Graphics.COLOR_RED" justification="Graphics.TEXT_JUSTIFY_RIGHT" />
-	<label id="rally22" x="90%" y="60%" font="Graphics.FONT_SMALL" color="Graphics.COLOR_RED" justification="Graphics.TEXT_JUSTIFY_RIGHT" />
-	<label id="rally23" x="85%" y="70%" font="Graphics.FONT_TINY" color="Graphics.COLOR_RED" justification="Graphics.TEXT_JUSTIFY_RIGHT" />
-	<label id="rally24" x="80%" y="80%" font="Graphics.FONT_XTINY" color="Graphics.COLOR_RED" justification="Graphics.TEXT_JUSTIFY_RIGHT" />
+	<label id="rally17" x="80%" y="10%" font="Graphics.FONT_XTINY" color="Graphics.COLOR_YELLOW" justification="Graphics.TEXT_JUSTIFY_RIGHT" />
+	<label id="rally18" x="85%" y="20%" font="Graphics.FONT_TINY" color="Graphics.COLOR_YELLOW" justification="Graphics.TEXT_JUSTIFY_RIGHT" />
+	<label id="rally19" x="90%" y="30%" font="Graphics.FONT_SMALL" color="Graphics.COLOR_YELLOW" justification="Graphics.TEXT_JUSTIFY_RIGHT" />
+	<label id="rally20" x="90%" y="40%" font="Graphics.FONT_SMALL" color="Graphics.COLOR_YELLOW" justification="Graphics.TEXT_JUSTIFY_RIGHT" />
+	<label id="rally21" x="90%" y="50%" font="Graphics.FONT_SMALL" color="Graphics.COLOR_YELLOW" justification="Graphics.TEXT_JUSTIFY_RIGHT" />
+	<label id="rally22" x="90%" y="60%" font="Graphics.FONT_SMALL" color="Graphics.COLOR_YELLOW" justification="Graphics.TEXT_JUSTIFY_RIGHT" />
+	<label id="rally23" x="85%" y="70%" font="Graphics.FONT_TINY" color="Graphics.COLOR_YELLOW" justification="Graphics.TEXT_JUSTIFY_RIGHT" />
+	<label id="rally24" x="80%" y="80%" font="Graphics.FONT_XTINY" color="Graphics.COLOR_YELLOW" justification="Graphics.TEXT_JUSTIFY_RIGHT" />
 </layout>

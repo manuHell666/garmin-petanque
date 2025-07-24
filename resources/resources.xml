@@ -27,8 +27,8 @@
 			displayInActivitySummary="false"
 			sortOrder="2"
 			precision="0"
-			dataLabel="@Strings.field_rally_player_data_label"
-			unitLabel="@Strings.field_rally_player_unit_label" />
+			dataLabel="@Strings.field_rally_score_player1_data_label"
+			unitLabel="@Strings.field_rally_score_player1_unit_label" />
 		<fitField
 			id="3"
 			displayInChart="false"
@@ -36,8 +36,8 @@
 			displayInActivitySummary="false"
 			sortOrder="3"
 			precision="0"
-			dataLabel="@Strings.field_rally_score_data_label"
-			unitLabel="@Strings.field_rally_score_unit_label" />
+			dataLabel="@Strings.field_rally_score_player2_data_label"
+			unitLabel="@Strings.field_rally_score_player2_unit_label" />
 
 	</fitContributions>
 </resources>

@@ -22,8 +22,8 @@ class Match {
 
 	const TOTAL_SCORE_PLAYER_1_FIELD_ID = 0;
 	const TOTAL_SCORE_PLAYER_2_FIELD_ID = 1;
-	const RALLY_PLAYER_FIELD_ID = 2;
-	const RALLY_SCORE_FIELD_ID = 3;
+	const RALLY_SCORE_PLAYER1_FIELD_ID = 2;
+	const RALLY_SCORE_PLAYER2_FIELD_ID = 3;
 	/*
 	const SET_WON_PLAYER_1_FIELD_ID = 2;
 	const SET_WON_PLAYER_2_FIELD_ID = 3;
@@ -40,8 +40,8 @@ class Match {
 	private var session as Session;
 	private var fieldScorePlayer1 as Field;
 	private var fieldScorePlayer2 as Field;
-	private var fieldRallyPlayer as Field;
-	private var fieldRallyScore as Field;
+	private var fieldRallyScorePlayer1 as Field;
+	private var fieldRallyScorePlayer2 as Field;
 	/*
 	private var fieldSetPlayer1 as Field;
 	private var fieldSetPlayer2 as Field;
@@ -72,8 +72,8 @@ class Match {
 
 		fieldScorePlayer1 = session.createField("score_player_1", TOTAL_SCORE_PLAYER_1_FIELD_ID, FitContributor.DATA_TYPE_UINT16, {:mesgType => FitContributor.MESG_TYPE_SESSION, :units => WatchUi.loadResource(Rez.Strings.fit_score_unit_label) as String});
 		fieldScorePlayer2 = session.createField("score_player_2", TOTAL_SCORE_PLAYER_2_FIELD_ID, FitContributor.DATA_TYPE_UINT16, {:mesgType => FitContributor.MESG_TYPE_SESSION, :units => WatchUi.loadResource(Rez.Strings.fit_score_unit_label) as String});
-		fieldRallyPlayer = session.createField("rally_player", RALLY_PLAYER_FIELD_ID, FitContributor.DATA_TYPE_UINT16, {:mesgType => FitContributor.MESG_TYPE_LAP, :units => WatchUi.loadResource(Rez.Strings.fit_player_label) as String});
-		fieldRallyScore = session.createField("rally_score", RALLY_SCORE_FIELD_ID, FitContributor.DATA_TYPE_UINT16, {:mesgType => FitContributor.MESG_TYPE_LAP, :units => WatchUi.loadResource(Rez.Strings.fit_score_unit_label) as String});
+		fieldRallyScorePlayer1 = session.createField("rally_player", RALLY_SCORE_PLAYER1_FIELD_ID, FitContributor.DATA_TYPE_UINT16, {:mesgType => FitContributor.MESG_TYPE_LAP, :units => WatchUi.loadResource(Rez.Strings.fit_player_label) as String});
+		fieldRallyScorePlayer2 = session.createField("rally_score", RALLY_SCORE_PLAYER2_FIELD_ID, FitContributor.DATA_TYPE_UINT16, {:mesgType => FitContributor.MESG_TYPE_LAP, :units => WatchUi.loadResource(Rez.Strings.fit_score_unit_label) as String});
 		session.start();
 
 		(Application.getApp() as PetanqueApp).getBus().dispatch(new BusEvent(:onMatchBegin, null));
@@ -93,8 +93,8 @@ class Match {
 
 		fieldScorePlayer1 = session.createField("score_player_1", TOTAL_SCORE_PLAYER_1_FIELD_ID, FitContributor.DATA_TYPE_UINT16, {:mesgType => FitContributor.MESG_TYPE_SESSION, :units => WatchUi.loadResource(Rez.Strings.fit_score_unit_label) as String});
 		fieldScorePlayer2 = session.createField("score_player_2", TOTAL_SCORE_PLAYER_2_FIELD_ID, FitContributor.DATA_TYPE_UINT16, {:mesgType => FitContributor.MESG_TYPE_SESSION, :units => WatchUi.loadResource(Rez.Strings.fit_score_unit_label) as String});
-		fieldRallyPlayer = session.createField("rally_player", RALLY_PLAYER_FIELD_ID, FitContributor.DATA_TYPE_UINT16, {:mesgType => FitContributor.MESG_TYPE_LAP, :units => WatchUi.loadResource(Rez.Strings.fit_player_label) as String});
-		fieldRallyScore = session.createField("rally_score", RALLY_SCORE_FIELD_ID, FitContributor.DATA_TYPE_UINT16, {:mesgType => FitContributor.MESG_TYPE_LAP, :units => WatchUi.loadResource(Rez.Strings.fit_score_unit_label) as String});
+		fieldRallyScorePlayer1 = session.createField("rally_player", RALLY_SCORE_PLAYER1_FIELD_ID, FitContributor.DATA_TYPE_UINT16, {:mesgType => FitContributor.MESG_TYPE_LAP, :units => WatchUi.loadResource(Rez.Strings.fit_player_label) as String});
+		fieldRallyScorePlayer2 = session.createField("rally_score", RALLY_SCORE_PLAYER2_FIELD_ID, FitContributor.DATA_TYPE_UINT16, {:mesgType => FitContributor.MESG_TYPE_LAP, :units => WatchUi.loadResource(Rez.Strings.fit_score_unit_label) as String});
 		session.start();
 	}
 
@@ -157,8 +157,8 @@ class Match {
 			session.addLap();
 			System.println("addLap");
 		}
-		fieldRallyPlayer.setData(scorer);
-		fieldRallyScore.setData((set.getRallies().last() as MatchSetRally).getScore());
+		fieldRallyScorePlayer1.setData(scorer);
+		fieldRallyScorePlayer2.setData((set.getRallies().last() as MatchSetRally).getScore());
 
 		//end the set if it has been won
 		var set_winner = isSetWon(set);
