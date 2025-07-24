@@ -1,5 +1,5 @@
 <resources>
-	<string id="application_name">Petanque</string>
+	<string id="application_name">Pétanque</string>
 
 	<string id="menu_title">Match</string>
 	<string id="menu_resume_match">Reprendre</string>
@@ -14,11 +14,6 @@
 	<string id="type_double">Doublette</string>
 	<string id="type_triple">Triplette</string>
 
-	<string id="sets_number">Parties</string>
-	<string id="set_1">1</string>
-	<string id="set_2">2</string>
-	<string id="set_3">3</string>
-	<string id="set_endless">Sans fin</string>
 
 	<string id="rally">Mène</string>
 	<string id="rallies">Mènes</string>
@@ -52,22 +47,13 @@
 	<string id="settings_enable_alert_heart_rate_zone_5">Alerter quand la fréquence cardiaque atteint la zone 5</string>
 
 	<string id="fit_activity_name">Pétanque</string>
-	<string id="fit_set_unit_label">partie</string>
-	<string id="fit_score_unit_label">points</string>
-	<string id="fit_set_player_1_label">Parties gagnés</string>
-	<string id="fit_set_player_2_label">Parties perdus</string>
-	<string id="fit_set_score_player_1_label">Votre score (partie)</string>
-	<string id="fit_set_score_player_2_label">Score de l'adversaire (partie)</string>
-	<string id="fit_score_player_1_label">Votre score total</string>
-	<string id="fit_score_player_2_label">Score total de l'adversaire</string>
+	<string id="fit_score_unit_label">pts</string>
+	<string id="fit_score_player_1_label">Votre score</string>
+	<string id="fit_score_player_2_label">Score de l'adversaire</string>
 	<string id="fit_player_label">Joueur</string>
 
-	<string id="field_score_player1_data_label">Nous</string>
-	<string id="field_score_player1_unit_label">pts</string>
+	<string id="field_score_player1_data_label">Vous</string>
 	<string id="field_score_player2_data_label">Eux</string>
-	<string id="field_score_player2_unit_label">pts</string>
-	<string id="field_rally_score_player1_data_label">Nous</string>
-	<string id="field_rally_score_player1_unit_label">pts</string>
+	<string id="field_rally_score_player1_data_label">Vous</string>
 	<string id="field_rally_score_player2_data_label">Eux</string>
-	<string id="field_rally_score_player2_unit_label">pts</string>
 </resources>

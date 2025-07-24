@@ -7,16 +7,6 @@
 				<listEntry value="2">@Strings.type_triple</listEntry>
 			</settingConfig>
 		</setting>
-
-		<setting propertyKey="@Properties.default_match_number_of_sets" title="@Strings.settings_default_match_number_of_sets">
-			<settingConfig type="list">
-				<listEntry value="0">@Strings.set_1</listEntry>
-				<listEntry value="1">@Strings.set_2</listEntry>
-				<listEntry value="2">@Strings.set_3</listEntry>
-				<listEntry value="3">@Strings.set_endless</listEntry>
-			</settingConfig>
-		</setting>
-
 	</group>
 
 	<setting propertyKey="@Properties.enable_sound" title="@Strings.settings_enable_sound">

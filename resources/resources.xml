@@ -10,7 +10,7 @@
 			sortOrder="0"
 			precision="0"
 			dataLabel="@Strings.field_score_player1_data_label"
-			unitLabel="@Strings.field_score_player1_unit_label" />
+			unitLabel="@Strings.fit_score_unit_label" />
 		<fitField
 			id="1"
 			displayInChart="false"
@@ -19,7 +19,7 @@
 			sortOrder="1"
 			precision="0"
 			dataLabel="@Strings.field_score_player2_data_label"
-			unitLabel="@Strings.field_score_player2_unit_label" />
+			unitLabel="@Strings.fit_score_unit_label" />
 		<fitField
 			id="2"
 			displayInChart="false"
@@ -28,7 +28,7 @@
 			sortOrder="2"
 			precision="0"
 			dataLabel="@Strings.field_rally_score_player1_data_label"
-			unitLabel="@Strings.field_rally_score_player1_unit_label" />
+			unitLabel="@Strings.fit_score_unit_label" />
 		<fitField
 			id="3"
 			displayInChart="false"
@@ -37,7 +37,7 @@
 			sortOrder="3"
 			precision="0"
 			dataLabel="@Strings.field_rally_score_player2_data_label"
-			unitLabel="@Strings.field_rally_score_player2_unit_label" />
+			unitLabel="@Strings.fit_score_unit_label" />
 
 	</fitContributions>
 </resources>

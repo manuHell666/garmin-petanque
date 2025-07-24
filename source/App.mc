@@ -58,7 +58,7 @@ class PetanqueApp extends Application.AppBase {
 	}
 
 	function onMatchEnd(payload as Dictionary) as Void {
-		Position.enableLocationEvents(Position.LOCATION_DISABLE, null);
+		disablePosition();
 		var winner = payload["winner"];
 		if(winner != null && Attention has :playTone && Properties.getValue("enable_sound")) {
 			Attention.playTone(winner == USER ? Attention.TONE_SUCCESS : Attention.TONE_FAILURE);
@@ -73,5 +73,16 @@ class PetanqueApp extends Application.AppBase {
 		//do not name the event "onSettingsChanged" to avoid recursion
 		//"onSettingsChanged" is the native event and "onUpdateSettings" is the custom event for this app (that views can catch)
 		BUS.dispatch(new BusEvent(:onUpdateSettings, null));
+	}
+
+	function enablePosition() {
+
+	}
+
+	function disablePosition() {
+		if (Properties.getValue("enable_position")) {
+			Attention.playTone(Attention.TONE_STOP);
+		}
+		Position.enableLocationEvents(Position.LOCATION_DISABLE, null);
 	}
 }
