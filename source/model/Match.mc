@@ -58,6 +58,7 @@ class Match {
 	}
 
 	function discard() as Void {
+		Position.enableLocationEvents(Position.LOCATION_DISABLE, null);
 		session.discard();
 
 		var sport = Activity.SPORT_GENERIC;
@@ -72,13 +73,14 @@ class Match {
 	}
 
 	function end(winner_team as Team?) as Void {
+		Position.enableLocationEvents(Position.LOCATION_DISABLE, null);
 		if(hasEnded()) {
 			throw new OperationNotAllowedException("Unable to end a match that has already been ended");
 		}
 		ended = true;
 
-		var you_sets_won = getSetsWon(USER);
-		var opponent_sets_won = getSetsWon(OPPONENT);
+//		var you_sets_won = getSetsWon(USER);
+//		var opponent_sets_won = getSetsWon(OPPONENT);
 		var you_total_score = getTotalScore(USER);
 		var opponent_total_score = getTotalScore(OPPONENT);
 
@@ -87,9 +89,12 @@ class Match {
 		//in standard mode, the winner has already been determined when the last set has been won
 		if(winner_team == null) {
 			//determine winner based on sets
+			/*
 			if(you_sets_won != opponent_sets_won) {
 				winner = you_sets_won > opponent_sets_won ? USER : OPPONENT;
 			}
+			*/
+			winner = isWon();
 			//determine winner based on total score
 			if(winner == null && you_total_score != opponent_total_score) {
 				winner = you_total_score > opponent_total_score ? USER : OPPONENT;
@@ -122,12 +127,14 @@ class Match {
 		var set = getCurrentSet();
 		var before = set.getRalliesNumber() as Number;
 		set.score(scorer);
-		if (set.getRalliesNumber() != before && isWon() == null){
+		System.println(""+set.getRalliesNumber()+" "+isWon());
+		if (set.getRalliesNumber() != before && isWon() == null && before > 0){
 			session.addLap();
 			System.println("addLap");
 		}
-		fieldRallyScorePlayer1.setData(scorer);
-		fieldRallyScorePlayer2.setData((set.getRallies().last() as MatchSetRally).getScore());
+		fieldRallyScorePlayer1.setData(set.getScore(USER));
+		fieldRallyScorePlayer2.setData(set.getScore(OPPONENT));
+		
 
 		//end the set if it has been won
 		var set_winner = isSetWon(set);
@@ -153,8 +160,10 @@ class Match {
 		return null;
 	}
 
+
 	private function isWon() as Team {
-		return getSetsWon(USER) > getSetsWon(OPPONENT) ? USER: OPPONENT;
+		return isSetWon(set);
+//		return getSetsWon(USER) > getSetsWon(OPPONENT) ? USER: OPPONENT;
 	}
 
 	function undo() as Void {
@@ -191,10 +200,11 @@ class Match {
 		return set.getScore(team);
 	}
 
+/*
 	function getSetsWon(team as Team) as Number {
 		return (set.getWinner() == team) ? 1 : 0;
 	}
-
+*/
 	function getWinner() as Team? {
 		return winner;
 	}	

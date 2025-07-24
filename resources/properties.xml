@@ -1,6 +1,7 @@
 <properties>
-	<property id="enable_sound" type="boolean">true</property>
+	<property id="enable_sound" type="boolean">false</property>
 	<property id="enable_animation" type="boolean">true</property>
+	<property id="enable_position" type="boolean">true</property>
 	<property id="display_time" type="boolean">true</property>
 	<property id="display_heart_rate" type="boolean">true</property>
 	<property id="default_match_type" type="number">0</property>
