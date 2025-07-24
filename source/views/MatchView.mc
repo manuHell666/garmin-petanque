@@ -324,7 +324,7 @@ class MatchViewDelegate extends WatchUi.BehaviorDelegate {
 			match.undo();
 			WatchUi.requestUpdate();
 		}
-		else if(match.getSets().size() == 1) {
+		else {
 
 			//the match can be discarded without configuration because it has not been started yet
 			match.discard();

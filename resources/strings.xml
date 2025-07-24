@@ -44,6 +44,7 @@
 
 	<string id="settings_enable_sound">Enable sound</string>
 	<string id="settings_enable_animation">Enable animation</string>
+	<string id="settings_enable_position">Enable Position</string>
 
 	<string id="settings_display_time">Display time</string>
 	<string id="settings_display_heart_rate">Display heart rate</string>
@@ -61,12 +62,12 @@
 	<string id="fit_score_player_2_label">Opponent total score</string>
 	<string id="fit_player_label">Player</string>
 
-	<string id="field_score_player1_data_label">Player 1</string>
+	<string id="field_score_player1_data_label">Us</string>
 	<string id="field_score_player1_unit_label">pts</string>
-	<string id="field_score_player2_data_label">Player 2</string>
+	<string id="field_score_player2_data_label">Them</string>
 	<string id="field_score_player2_unit_label">pts</string>
-	<string id="field_rally_score_player1_data_label">Player 1</string>
+	<string id="field_rally_score_player1_data_label">Us</string>
 	<string id="field_rally_score_player1_unit_label">pts</string>
-	<string id="field_rally_score_player2_data_label">Player 2</string>
+	<string id="field_rally_score_player2_data_label">Them</string>
 	<string id="field_rally_score_player2_unit_label">pts</string>
 </resources>

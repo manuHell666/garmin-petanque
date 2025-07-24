@@ -58,6 +58,7 @@ class PetanqueApp extends Application.AppBase {
 	}
 
 	function onMatchEnd(payload as Dictionary) as Void {
+		Position.enableLocationEvents(Position.LOCATION_DISABLE, null);
 		var winner = payload["winner"];
 		if(winner != null && Attention has :playTone && Properties.getValue("enable_sound")) {
 			Attention.playTone(winner == USER ? Attention.TONE_SUCCESS : Attention.TONE_FAILURE);

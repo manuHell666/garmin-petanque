@@ -27,6 +27,10 @@
 		<settingConfig type="boolean" />
 	</setting>
 
+	<setting propertyKey="@Properties.enable_position" title="@Strings.settings_enable_position">
+		<settingConfig type="boolean" />
+	</setting>
+
 	<setting propertyKey="@Properties.display_time" title="@Strings.settings_display_time">
 		<settingConfig type="boolean" />
 	</setting>

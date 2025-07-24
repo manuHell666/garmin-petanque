@@ -44,6 +44,7 @@
 
 	<string id="settings_enable_sound">Activer les sons</string>
 	<string id="settings_enable_animation">Activer les animations</string>
+	<string id="settings_enable_position">Activer le Positionnement</string>
 
 	<string id="settings_display_time">Afficher l'heure</string>
 	<string id="settings_display_heart_rate">Afficher la fréquence cardiaque</string>
@@ -61,12 +62,12 @@
 	<string id="fit_score_player_2_label">Score total de l'adversaire</string>
 	<string id="fit_player_label">Joueur</string>
 
-	<string id="field_score_player1_data_label">Joueur 1</string>
+	<string id="field_score_player1_data_label">Nous</string>
 	<string id="field_score_player1_unit_label">pts</string>
-	<string id="field_score_player2_data_label">Joueur 2</string>
+	<string id="field_score_player2_data_label">Eux</string>
 	<string id="field_score_player2_unit_label">pts</string>
-	<string id="field_rally_score_player1_data_label">Joueur 1</string>
+	<string id="field_rally_score_player1_data_label">Nous</string>
 	<string id="field_rally_score_player1_unit_label">pts</string>
-	<string id="field_rally_score_player2_data_label">Joueur 2</string>
+	<string id="field_rally_score_player2_data_label">Eux</string>
 	<string id="field_rally_score_player2_unit_label">pts</string>
 </resources>
