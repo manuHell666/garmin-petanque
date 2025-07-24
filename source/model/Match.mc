@@ -9,14 +9,6 @@ enum Team {
 	OPPONENT = 2
 }
 
-class MatchConfig {
-	public var maximumSets as Number?; //maximum number of sets for this match, null for match in endless mode
-
-	function initialize() {
-		self.maximumSets = 1;
-	}
-}
-
 class Match {
 	static const MAX_SETS = 1;
 
@@ -24,16 +16,9 @@ class Match {
 	const TOTAL_SCORE_PLAYER_2_FIELD_ID = 1;
 	const RALLY_SCORE_PLAYER1_FIELD_ID = 2;
 	const RALLY_SCORE_PLAYER2_FIELD_ID = 3;
-	/*
-	const SET_WON_PLAYER_1_FIELD_ID = 2;
-	const SET_WON_PLAYER_2_FIELD_ID = 3;
-	const SET_SCORE_PLAYER_1_FIELD_ID = 4;
-	const SET_SCORE_PLAYER_2_FIELD_ID = 5;
-	*/
 
-	private var config as MatchConfig;
-
-	private var sets as List; //list of played sets
+//	private var sets as List; //list of played sets
+	private var set as MatchSet; // Played Set
 	private var winner as Team?; //store the winner of the match, USER or OPPONENT
 	private var ended as Boolean; //store if the match has ended
 
@@ -42,25 +27,13 @@ class Match {
 	private var fieldScorePlayer2 as Field;
 	private var fieldRallyScorePlayer1 as Field;
 	private var fieldRallyScorePlayer2 as Field;
-	/*
-	private var fieldSetPlayer1 as Field;
-	private var fieldSetPlayer2 as Field;
-	private var fieldSetScorePlayer1 as Field;
-	private var fieldSetScorePlayer2 as Field;
-	*/
-	function initialize(config as MatchConfig) {
-		self.config = config;
-		ended = false;
-		sets = new List();
 
-		sets.push(new MatchSet());
+	function initialize() {
+		ended = false;
+		set = new MatchSet();
 
 		//determine sport and subsport
-		//it would be better to use feature detection instead of checking the version, but this does not work, see IQTest.mc
-//		var version = System.getDeviceSettings().monkeyVersion;
-//		var v410 = version[0] > 4 || version[0] == 4 && version[1] >= 1;
-//		var sport = v410 ? Activity.SPORT_WALKING : ActivityRecording.SPORT_GENERIC;
-//		var sub_sport = v410 ? Activity.SUB_SPORT_CASUAL_WALKING : ActivityRecording.SUB_SPORT_MATCH;
+
 		var sport = Activity.SPORT_GENERIC;
 		var sub_sport = Activity.SUB_SPORT_GENERIC;
 
@@ -138,12 +111,8 @@ class Match {
 		(Application.getApp() as PetanqueApp).getBus().dispatch(event);
 	}
 
-	function getMaximumSets() as Number? {
-		return config.maximumSets;
-	}
-
 	function getCurrentSet() as MatchSet {
-		return sets.last() as MatchSet;
+		return set;
 	}
 
 	function score(scorer as Team) as Void {
@@ -165,19 +134,12 @@ class Match {
 		if(set_winner != null) {
 			set.end(set_winner);
 
-			//manage activity session
-			/*
-			fieldSetScorePlayer1.setData(set.getScore(USER));
-			fieldSetScorePlayer2.setData(set.getScore(OPPONENT));
-			*/
 			fieldScorePlayer1.setData(set.getScore(USER));
 			fieldScorePlayer2.setData(set.getScore(OPPONENT));
 
-			if(!isEndless()) {
-				var match_winner = isWon();
-				if(match_winner != null) {
-					end(match_winner);
-				}
+			var match_winner = isWon();
+			if(match_winner != null) {
+				end(match_winner);
 			}
 		}
 	}
@@ -191,21 +153,8 @@ class Match {
 		return null;
 	}
 
-	private function isWon() as Team? {
-		//in endless mode, no winner can be determined wile the match has not been ended
-		if(isEndless()) {
-			return null;
-		}
-		var winning_sets = config.maximumSets as Number / 2; //if not in endless mode, maximum sets cannot be null
-		var player_1_sets = getSetsWon(USER);
-		if(player_1_sets > winning_sets) {
-			return USER;
-		}
-		var player_2_sets = getSetsWon(OPPONENT);
-		if(player_2_sets > winning_sets) {
-			return OPPONENT;
-		}
-		return null;
+	private function isWon() as Team {
+		return getSetsWon(USER) > getSetsWon(OPPONENT) ? USER: OPPONENT;
 	}
 
 	function undo() as Void {
@@ -226,20 +175,8 @@ class Match {
 
 	function getDistance() as String {
 		var info = Activity.getActivityInfo() as Info;
-		System.println(info.elapsedDistance);
 		var distance = (info.elapsedDistance != null) ? info.elapsedDistance : 0.0;
-		System.println(distance);
-		System.println(Helpers.formatString("${meters} M", {"meters" => distance.format("%.0d")}));
-		System.println(Helpers.formatString(" bite M", {"bite" => "4"}));
 		return (distance > 0 && distance != null) ? Helpers.formatString("${meters} M", {"meters" => distance.format("%.0d")}) : "0 M";
-	}
-
-	function isEndless() as Boolean {
-		return config.maximumSets == null;
-	}
-
-	function getSets() as List {
-		return sets;
 	}
 
 	function hasEnded() as Boolean {
@@ -247,32 +184,15 @@ class Match {
 	}
 
 	function getTotalRalliesNumber() as Number {
-		var number = 0;
-		for(var i = 0; i < sets.size(); i++) {
-			var set = sets.get(i) as MatchSet;
-			number += set.getRalliesNumber();
-		}
-		return number;
+		return set.getRalliesNumber();
 	}
 
 	function getTotalScore(team as Team) as Number {
-		var score = 0;
-		for(var i = 0; i < sets.size(); i++) {
-			var set = sets.get(i) as MatchSet;
-			score += set.getScore(team);
-		}
-		return score;
+		return set.getScore(team);
 	}
 
 	function getSetsWon(team as Team) as Number {
-		var won = 0;
-		for(var i = 0; i < sets.size(); i++) {
-			var set = sets.get(i) as MatchSet;
-			if(set.getWinner() == team) {
-				won++;
-			}
-		}
-		return won;
+		return (set.getWinner() == team) ? 1 : 0;
 	}
 
 	function getWinner() as Team? {

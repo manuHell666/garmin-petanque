@@ -13,11 +13,8 @@ class InitialView extends WatchUi.View {
 	}
 
 	function onShow() {
-		//create match config
-		var config = new MatchConfig();
-
 		//create match
-		var match = new Match(config);
+		var match = new Match();
 
 		var app = Application.getApp() as PetanqueApp;
 		app.setMatch(match);
