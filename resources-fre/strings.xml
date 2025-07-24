@@ -1,0 +1,72 @@
+<resources>
+	<string id="application_name">Petanque</string>
+
+	<string id="menu_title">Match</string>
+	<string id="menu_resume_match">Reprendre</string>
+	<string id="menu_reset_match">Reset</string>
+	<string id="menu_end_match">Terminer</string>
+	<string id="menu_exit">Quitter</string>
+
+	<string id="discard_match">Annuler ?</string>
+
+	<string id="type_what">Type</string>
+	<string id="type_single">Tête à tête</string>
+	<string id="type_double">Doublette</string>
+	<string id="type_triple">Triplette</string>
+
+	<string id="sets_number">Parties</string>
+	<string id="set_1">1</string>
+	<string id="set_2">2</string>
+	<string id="set_3">3</string>
+	<string id="set_endless">Sans fin</string>
+
+	<string id="rally">Mène</string>
+	<string id="rallies">Mènes</string>
+	<string id="total_rallies">${rallies} Mènes</string>
+
+	<string id="end_you_won">Gagné !</string>
+	<string id="end_opponent_won">Perdu !</string>
+	<string id="end_draw">Match nul</string>
+	<string id="end_save_garmin_connect">Sauvegarder ?</string>
+
+	<string id="stats_title">Statistiques</string>
+	<string id="stats_average_heart_rate">HR moyen ${average_heart_rate} bpm</string>
+	<string id="stats_max_heart_rate">HR max ${max_heart_rate} bpm</string>
+	<string id="stats_meters">${meters} m</string>
+	<string id="stats_calories">${calories}kcal</string>
+	<string id="stats_no_stats">Rien à afficher</string>
+	<string id="stats_time">${stats_time} mins</string>
+
+	<string id="settings_group_default_options">Choix par défaut pour les matchs</string>
+	<string id="settings_group_default_options_description">Configuration des choix par défaut lors du démarrage d'un match</string>
+	<string id="settings_default_match_type">Type de match par défaut</string>
+	<string id="settings_default_match_number_of_sets">Nombre de sets par défaut</string>
+
+	<string id="settings_enable_sound">Activer les sons</string>
+	<string id="settings_enable_animation">Activer les animations</string>
+
+	<string id="settings_display_time">Afficher l'heure</string>
+	<string id="settings_display_heart_rate">Afficher la fréquence cardiaque</string>
+
+	<string id="settings_enable_alert_heart_rate_zone_5">Alerter quand la fréquence cardiaque atteint la zone 5</string>
+
+	<string id="fit_activity_name">Pétanque</string>
+	<string id="fit_set_unit_label">partie</string>
+	<string id="fit_score_unit_label">points</string>
+	<string id="fit_set_player_1_label">Parties gagnés</string>
+	<string id="fit_set_player_2_label">Parties perdus</string>
+	<string id="fit_set_score_player_1_label">Votre score (partie)</string>
+	<string id="fit_set_score_player_2_label">Score de l'adversaire (partie)</string>
+	<string id="fit_score_player_1_label">Votre score total</string>
+	<string id="fit_score_player_2_label">Score total de l'adversaire</string>
+	<string id="fit_player_label">Joueur</string>
+
+	<string id="field_score_player1_data_label">Joueur 1</string>
+	<string id="field_score_player1_unit_label">pts</string>
+	<string id="field_score_player2_data_label">Joueur 2</string>
+	<string id="field_score_player2_unit_label">pts</string>
+	<string id="field_rally_player_data_label">Joueur</string>
+	<string id="field_rally_player_unit_label"></string>
+	<string id="field_rally_score_data_label">Score</string>
+	<string id="field_rally_score_unit_label">pt(s)</string>
+</resources>

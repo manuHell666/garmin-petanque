@@ -1,0 +1,19 @@
+<layout id="result_rallies">
+	<label id="rally1" x="20%" y="10%" font="Graphics.FONT_SMALL" color="Graphics.COLOR_BLUE" justification="Graphics.TEXT_JUSTIFY_LEFT" />
+	<label id="rally2" x="15%" y="20%" font="Graphics.FONT_SMALL" color="Graphics.COLOR_BLUE" justification="Graphics.TEXT_JUSTIFY_LEFT" />
+	<label id="rally3" x="10%" y="30%" font="Graphics.FONT_SMALL" color="Graphics.COLOR_BLUE" justification="Graphics.TEXT_JUSTIFY_LEFT" />
+	<label id="rally4" x="10%" y="40%" font="Graphics.FONT_SMALL" color="Graphics.COLOR_BLUE" justification="Graphics.TEXT_JUSTIFY_LEFT" />
+	<label id="rally5" x="10%" y="50%" font="Graphics.FONT_SMALL" color="Graphics.COLOR_BLUE" justification="Graphics.TEXT_JUSTIFY_LEFT" />
+	<label id="rally6" x="10%" y="60%" font="Graphics.FONT_SMALL" color="Graphics.COLOR_BLUE" justification="Graphics.TEXT_JUSTIFY_LEFT" />
+	<label id="rally7" x="15%" y="70%" font="Graphics.FONT_SMALL" color="Graphics.COLOR_BLUE" justification="Graphics.TEXT_JUSTIFY_LEFT" />
+	<label id="rally8" x="20%" y="80%" font="Graphics.FONT_SMALL" color="Graphics.COLOR_BLUE" justification="Graphics.TEXT_JUSTIFY_LEFT" />
+
+	<label id="rally9" x="80%" y="10%" font="Graphics.FONT_SMALL" color="Graphics.COLOR_RED" justification="Graphics.TEXT_JUSTIFY_RIGHT" />
+	<label id="rally10" x="85%" y="20%" font="Graphics.FONT_SMALL" color="Graphics.COLOR_RED" justification="Graphics.TEXT_JUSTIFY_RIGHT" />
+	<label id="rally11" x="90%" y="30%" font="Graphics.FONT_SMALL" color="Graphics.COLOR_RED" justification="Graphics.TEXT_JUSTIFY_RIGHT" />
+	<label id="rally12" x="90%" y="40%" font="Graphics.FONT_SMALL" color="Graphics.COLOR_RED" justification="Graphics.TEXT_JUSTIFY_RIGHT" />
+	<label id="rally13" x="90%" y="50%" font="Graphics.FONT_SMALL" color="Graphics.COLOR_RED" justification="Graphics.TEXT_JUSTIFY_RIGHT" />
+	<label id="rally14" x="90%" y="60%" font="Graphics.FONT_SMALL" color="Graphics.COLOR_RED" justification="Graphics.TEXT_JUSTIFY_RIGHT" />
+	<label id="rally15" x="85%" y="70%" font="Graphics.FONT_SMALL" color="Graphics.COLOR_RED" justification="Graphics.TEXT_JUSTIFY_RIGHT" />
+	<label id="rally16" x="80%" y="80%" font="Graphics.FONT_SMALL" color="Graphics.COLOR_RED" justification="Graphics.TEXT_JUSTIFY_RIGHT" />
+</layout>

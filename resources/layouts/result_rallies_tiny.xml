@@ -1,0 +1,28 @@
+<layout id="result_rallies_tiny">
+	<label id="rally1" x="20%" y="10%" font="Graphics.FONT_XTINY" color="Graphics.COLOR_BLUE" justification="Graphics.TEXT_JUSTIFY_LEFT" />
+	<label id="rally2" x="15%" y="20%" font="Graphics.FONT_TINY" color="Graphics.COLOR_BLUE" justification="Graphics.TEXT_JUSTIFY_LEFT" />
+	<label id="rally3" x="10%" y="30%" font="Graphics.FONT_SMALL" color="Graphics.COLOR_BLUE" justification="Graphics.TEXT_JUSTIFY_LEFT" />
+	<label id="rally4" x="10%" y="40%" font="Graphics.FONT_SMALL" color="Graphics.COLOR_BLUE" justification="Graphics.TEXT_JUSTIFY_LEFT" />
+	<label id="rally5" x="10%" y="50%" font="Graphics.FONT_SMALL" color="Graphics.COLOR_BLUE" justification="Graphics.TEXT_JUSTIFY_LEFT" />
+	<label id="rally6" x="10%" y="60%" font="Graphics.FONT_SMALL" color="Graphics.COLOR_BLUE" justification="Graphics.TEXT_JUSTIFY_LEFT" />
+	<label id="rally7" x="15%" y="70%" font="Graphics.FONT_TINY" color="Graphics.COLOR_BLUE" justification="Graphics.TEXT_JUSTIFY_LEFT" />
+	<label id="rally8" x="20%" y="80%" font="Graphics.FONT_XTINY" color="Graphics.COLOR_BLUE" justification="Graphics.TEXT_JUSTIFY_LEFT" />
+
+	<label id="rally9" x="center" y="10%" font="Graphics.FONT_XTINY" color="Graphics.COLOR_WHITE" justification="Graphics.TEXT_JUSTIFY_CENTER" />
+	<label id="rally10" x="center" y="20%" font="Graphics.FONT_TINY" color="Graphics.COLOR_WHITE" justification="Graphics.TEXT_JUSTIFY_CENTER" />
+	<label id="rally11" x="center" y="30%" font="Graphics.FONT_SMALL" color="Graphics.COLOR_WHITE" justification="Graphics.TEXT_JUSTIFY_CENTER" />
+	<label id="rally12" x="center" y="40%" font="Graphics.FONT_SMALL" color="Graphics.COLOR_WHITE" justification="Graphics.TEXT_JUSTIFY_CENTER" />
+	<label id="rally13" x="center" y="50%" font="Graphics.FONT_SMALL" color="Graphics.COLOR_WHITE" justification="Graphics.TEXT_JUSTIFY_CENTER" />
+	<label id="rally14" x="center" y="60%" font="Graphics.FONT_SMALL" color="Graphics.COLOR_WHITE" justification="Graphics.TEXT_JUSTIFY_CENTER" />
+	<label id="rally15" x="center" y="70%" font="Graphics.FONT_TINY" color="Graphics.COLOR_WHITE" justification="Graphics.TEXT_JUSTIFY_CENTER" />
+	<label id="rally16" x="center" y="80%" font="Graphics.FONT_XTINY" color="Graphics.COLOR_WHITE" justification="Graphics.TEXT_JUSTIFY_CENTER" />
+
+	<label id="rally17" x="80%" y="10%" font="Graphics.FONT_XTINY" color="Graphics.COLOR_RED" justification="Graphics.TEXT_JUSTIFY_RIGHT" />
+	<label id="rally18" x="85%" y="20%" font="Graphics.FONT_TINY" color="Graphics.COLOR_RED" justification="Graphics.TEXT_JUSTIFY_RIGHT" />
+	<label id="rally19" x="90%" y="30%" font="Graphics.FONT_SMALL" color="Graphics.COLOR_RED" justification="Graphics.TEXT_JUSTIFY_RIGHT" />
+	<label id="rally20" x="90%" y="40%" font="Graphics.FONT_SMALL" color="Graphics.COLOR_RED" justification="Graphics.TEXT_JUSTIFY_RIGHT" />
+	<label id="rally21" x="90%" y="50%" font="Graphics.FONT_SMALL" color="Graphics.COLOR_RED" justification="Graphics.TEXT_JUSTIFY_RIGHT" />
+	<label id="rally22" x="90%" y="60%" font="Graphics.FONT_SMALL" color="Graphics.COLOR_RED" justification="Graphics.TEXT_JUSTIFY_RIGHT" />
+	<label id="rally23" x="85%" y="70%" font="Graphics.FONT_TINY" color="Graphics.COLOR_RED" justification="Graphics.TEXT_JUSTIFY_RIGHT" />
+	<label id="rally24" x="80%" y="80%" font="Graphics.FONT_XTINY" color="Graphics.COLOR_RED" justification="Graphics.TEXT_JUSTIFY_RIGHT" />
+</layout>
