@@ -39,8 +39,10 @@ class Match {
 
 		//manage sensors
 		Sensor.setEnabledSensors( [Sensor.SENSOR_HEARTRATE] );
-		if (Application.Properties.getValue("enable_position")) {
-			Attention.playTone(Attention.TONE_START);
+		if (Application.Properties.getValue("enable_position") as Boolean) {
+			if (! Application.Properties.getValue("enable_sound") as Boolean) {
+				Attention.playTone(Attention.TONE_START);
+			}
 			Position.enableLocationEvents(Position.LOCATION_CONTINUOUS, null);
 		}
 		//manage activity session

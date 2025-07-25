@@ -80,7 +80,7 @@ class PetanqueApp extends Application.AppBase {
 	}
 
 	function disablePosition() {
-		if (Properties.getValue("enable_position")) {
+		if (Properties.getValue("enable_sound") as Boolean) {
 			Attention.playTone(Attention.TONE_STOP);
 		}
 		Position.enableLocationEvents(Position.LOCATION_DISABLE, null);
