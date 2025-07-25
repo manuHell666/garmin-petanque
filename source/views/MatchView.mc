@@ -172,7 +172,7 @@ class MatchView extends WatchUi.View {
 		var SCORE_PLAYER_2_FONT = Graphics.FONT_NUMBER_THAI_HOT;
 		var score_separator_font = Graphics.FONT_NUMBER_THAI_HOT;
 		var SCORE_PLAYER_1_COLOR = Graphics.COLOR_BLUE;
-		var SCORE_PLAYER_2_COLOR = Graphics.COLOR_LT_GRAY;
+		var SCORE_PLAYER_2_COLOR = Graphics.COLOR_WHITE;
 		var score_separator_color = Graphics.COLOR_YELLOW;
 
 		var player_1_coordinates_score = bd.perspective.transform([-0.35, 0.55] as Point2D);
@@ -188,7 +188,7 @@ class MatchView extends WatchUi.View {
 		//boundaries cannot be null at this point
 		var bd = boundaries as MatchBoundaries;
 
-		dc.setColor(Graphics.COLOR_WHITE, Graphics.COLOR_TRANSPARENT);
+		dc.setColor(Graphics.COLOR_DK_GRAY, Graphics.COLOR_TRANSPARENT);
 		dc.drawText(
 			bd.xCenter,
 			bd.yFront + MatchBoundaries.TIME_HEIGHT * 0.1 as Float,
@@ -203,7 +203,7 @@ class MatchView extends WatchUi.View {
 		var bd = boundaries as MatchBoundaries;
 
 		var time_label = Helpers.formatCurrentTime(clock24Hour);
-		dc.setColor(Graphics.COLOR_WHITE, Graphics.COLOR_TRANSPARENT);
+		dc.setColor(Graphics.COLOR_YELLOW, Graphics.COLOR_TRANSPARENT);
 		dc.drawText(
 			bd.xCenter,
 			bd.marginHeight - MatchBoundaries.TIME_HEIGHT * 0.1 as Float,
@@ -215,21 +215,45 @@ class MatchView extends WatchUi.View {
 
 	function drawStats(dc as Dc) as Void {
 		var set = match.getCurrentSet();
+
+		var current_rally = WatchUi.loadResource(Rez.Strings.rally) + " " + (set.getRalliesNumber() == 0 ? 1 : set.getRalliesNumber()).toString();
 		var current_distance = match.getDistance();
 		var distance =(Properties.getValue("enable_position") && current_distance != null) ? " / " + current_distance : "";
-		var current_heartrate = Activity.getActivityInfo().currentHeartRate;
-		var heartrate = (Properties.getValue("display_heart_rate") && current_heartrate != null) ? " / " + current_heartrate + WatchUi.loadResource(Rez.Strings.heart_rate_unit) : "";
 
 		//boundaries cannot be null at this point
 		var bd = boundaries as MatchBoundaries;
-		var current_rally = WatchUi.loadResource(Rez.Strings.rally) + " " + (set.getRalliesNumber() == 0 ? 1 : set.getRalliesNumber()).toString();
-
-		dc.setColor(Graphics.COLOR_WHITE, Graphics.COLOR_TRANSPARENT);
+		
+		dc.setColor(Graphics.COLOR_LT_GRAY, Graphics.COLOR_TRANSPARENT);
 		dc.drawText(
 			bd.xCenter,
-			bd.yFront + MatchBoundaries.TIME_HEIGHT * -0.8 as Float,
+			bd.yFront + MatchBoundaries.TIME_HEIGHT * -0.9 as Float,
 			Graphics.FONT_TINY,
-			current_rally + " / " + distance + heartrate,
+			current_rally + distance,
+			Graphics.TEXT_JUSTIFY_CENTER
+		);
+	}
+
+
+	function drawHR(dc as Dc) as Void {
+		if (!Properties.getValue("display_heart_rate")) {
+			return;
+		}
+		var current_heartrate = Activity.getActivityInfo().currentHeartRate;
+
+		if (current_heartrate == null) {
+			return;
+		}
+
+
+		//boundaries cannot be null at this point
+		var bd = boundaries as MatchBoundaries;
+		
+		dc.setColor(Graphics.COLOR_LT_GRAY, Graphics.COLOR_TRANSPARENT);
+		dc.drawText(
+			bd.xCenter,
+			bd.marginHeight + MatchBoundaries.TIME_HEIGHT as Float,
+			Graphics.FONT_TINY,
+			current_heartrate + " " + WatchUi.loadResource(Rez.Strings.heart_rate_unit),
 			Graphics.TEXT_JUSTIFY_CENTER
 		);
 	}
@@ -261,6 +285,7 @@ class MatchView extends WatchUi.View {
 			drawScores(dc, match);
 			drawTimer(dc, match);
 			drawTime(dc);
+			drawHR(dc);
 			drawStats(dc);
 		}
 	}

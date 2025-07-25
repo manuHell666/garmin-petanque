@@ -42,7 +42,7 @@
 
 	<string id="settings_display_time">Display time</string>
 	<string id="settings_display_heart_rate">Display heart rate</string>
-	<string id="heart_rate_unit">bps</string>
+	<string id="heart_rate_unit">bpm</string>
 
 	<string id="settings_enable_alert_heart_rate_zone_5">Alert when heart rate reaches zone 5</string>
 
