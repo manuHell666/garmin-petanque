@@ -38,7 +38,7 @@ class Match {
 		var sub_sport = Activity.SUB_SPORT_GENERIC;
 
 		//manage sensors
-		//Sensor.setEnabledSensors( [Sensor.SENSOR_HEARTRATE,Sensor.SENSOR_TEMPERATURE,Sensor.SENSOR_FOOTPOD] );
+		Sensor.setEnabledSensors( [Sensor.SENSOR_HEARTRATE] );
 		if (Application.Properties.getValue("enable_position")) {
 			Attention.playTone(Attention.TONE_START);
 			Position.enableLocationEvents(Position.LOCATION_CONTINUOUS, null);

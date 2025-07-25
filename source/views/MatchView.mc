@@ -215,7 +215,10 @@ class MatchView extends WatchUi.View {
 
 	function drawStats(dc as Dc) as Void {
 		var set = match.getCurrentSet();
-		var distance = match.getDistance();
+		var current_distance = match.getDistance();
+		var distance =(Properties.getValue("enable_position") && current_distance != null) ? " / " + current_distance : "";
+		var current_heartrate = Activity.getActivityInfo().currentHeartRate;
+		var heartrate = (Properties.getValue("display_heart_rate") && current_heartrate != null) ? " / " + current_heartrate + WatchUi.loadResource(Rez.Strings.heart_rate_unit) : "";
 
 		//boundaries cannot be null at this point
 		var bd = boundaries as MatchBoundaries;
@@ -226,7 +229,7 @@ class MatchView extends WatchUi.View {
 			bd.xCenter,
 			bd.yFront + MatchBoundaries.TIME_HEIGHT * -0.8 as Float,
 			Graphics.FONT_TINY,
-			current_rally + " / " + distance,
+			current_rally + " / " + distance + heartrate,
 			Graphics.TEXT_JUSTIFY_CENTER
 		);
 	}
