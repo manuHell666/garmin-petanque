@@ -64,21 +64,15 @@ class Match {
 
 	function discard() as Void {
 		(Application.getApp() as PetanqueApp).disablePosition();
+		Sensor.setEnabledSensors([]);
+		Sensor.enableSensorEvents(null);
 		session.discard();
-
-		var sport = Activity.SPORT_GENERIC;
-		var sub_sport = Activity.SUB_SPORT_EXERCISE;
-		session = ActivityRecording.createSession({:sport => sport, :subSport => sub_sport, :name => WatchUi.loadResource(Rez.Strings.fit_activity_name) as String});
-
-		fieldScorePlayer1 = session.createField("score_player_1", TOTAL_SCORE_PLAYER_1_FIELD_ID, FitContributor.DATA_TYPE_UINT16, {:mesgType => FitContributor.MESG_TYPE_SESSION, :units => WatchUi.loadResource(Rez.Strings.fit_score_unit_label) as String});
-		fieldScorePlayer2 = session.createField("score_player_2", TOTAL_SCORE_PLAYER_2_FIELD_ID, FitContributor.DATA_TYPE_UINT16, {:mesgType => FitContributor.MESG_TYPE_SESSION, :units => WatchUi.loadResource(Rez.Strings.fit_score_unit_label) as String});
-		fieldRallyScorePlayer1 = session.createField("rally_player", RALLY_SCORE_PLAYER1_FIELD_ID, FitContributor.DATA_TYPE_UINT16, {:mesgType => FitContributor.MESG_TYPE_LAP, :units => WatchUi.loadResource(Rez.Strings.fit_player_label) as String});
-		fieldRallyScorePlayer2 = session.createField("rally_score", RALLY_SCORE_PLAYER2_FIELD_ID, FitContributor.DATA_TYPE_UINT16, {:mesgType => FitContributor.MESG_TYPE_LAP, :units => WatchUi.loadResource(Rez.Strings.fit_score_unit_label) as String});
-		session.start();
 	}
 
 	function end(winner_team as Team?) as Void {
 		(Application.getApp() as PetanqueApp).disablePosition();
+		Sensor.setEnabledSensors([]);
+		Sensor.enableSensorEvents(null);
 		if(hasEnded()) {
 			throw new OperationNotAllowedException("Unable to end a match that has already been ended");
 		}
